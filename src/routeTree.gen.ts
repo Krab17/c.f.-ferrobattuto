@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServiziRouteImport } from './routes/servizi'
 import { Route as LavoriRouteImport } from './routes/lavori'
+import { Route as ContattiRouteImport } from './routes/contatti'
 import { Route as AtelierRouteImport } from './routes/atelier'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const LavoriRoute = LavoriRouteImport.update({
   path: '/lavori',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AtelierRoute = AtelierRouteImport.update({
   id: '/atelier',
   path: '/atelier',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
   '/lavori': typeof LavoriRoute
   '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
   '/lavori': typeof LavoriRoute
   '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -59,21 +67,36 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
   '/lavori': typeof LavoriRoute
   '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/atelier' | '/lavori' | '/servizi' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/atelier'
+    | '/contatti'
+    | '/lavori'
+    | '/servizi'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/atelier' | '/lavori' | '/servizi' | '/sitemap.xml'
-  id: '__root__' | '/' | '/atelier' | '/lavori' | '/servizi' | '/sitemap.xml'
+  to: '/' | '/atelier' | '/contatti' | '/lavori' | '/servizi' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/atelier'
+    | '/contatti'
+    | '/lavori'
+    | '/servizi'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtelierRoute: typeof AtelierRoute
+  ContattiRoute: typeof ContattiRoute
   LavoriRoute: typeof LavoriRoute
   ServiziRoute: typeof ServiziRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -102,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LavoriRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/atelier': {
       id: '/atelier'
       path: '/atelier'
@@ -122,6 +152,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtelierRoute: AtelierRoute,
+  ContattiRoute: ContattiRoute,
   LavoriRoute: LavoriRoute,
   ServiziRoute: ServiziRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
