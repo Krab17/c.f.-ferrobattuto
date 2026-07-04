@@ -131,6 +131,7 @@ function RootComponent() {
         </main>
         <Footer />
         <MobileStickyBar />
+        <Toaster position="top-center" />
       </div>
     </QueryClientProvider>
   );
