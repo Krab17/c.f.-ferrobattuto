@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileStickyBar } from "@/components/MobileStickyBar";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -79,25 +81,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "C.F. Ferrobattuto" },
-      { name: "description", content: "Laboratorio artigiano di ferro battuto su misura. Cancelletti, ringhiere, portoni, arredi e lavorazioni personalizzate in ferro." },
+      { title: "C.F. Ferrobattuto — Ferro battuto artigianale su misura" },
+      { name: "description", content: "Laboratorio artigiano di ferro battuto a Cuneo. Cancelli, ringhiere, componenti forgiati ed elementi decorativi lavorati a mano e su misura, in tutto il Nord Italia." },
       { name: "author", content: "C.F. Ferrobattuto" },
-      { property: "og:title", content: "C.F. Ferrobattuto" },
-      { property: "og:description", content: "Laboratorio artigiano di ferro battuto su misura. Cancelletti, ringhiere, portoni, arredi e lavorazioni personalizzate in ferro." },
+      { property: "og:site_name", content: "C.F. Ferrobattuto" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/logo/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
   }),
@@ -126,12 +124,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 pb-14 md:pb-0">
           <Outlet />
         </main>
         <Footer />
+        <MobileStickyBar />
+        <Toaster position="top-center" />
       </div>
     </QueryClientProvider>
   );

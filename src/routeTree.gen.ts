@@ -10,10 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as ServiziRouteImport } from './routes/servizi'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as LavoriRouteImport } from './routes/lavori'
+import { Route as CookieRouteImport } from './routes/cookie'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as AtelierRouteImport } from './routes/atelier'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -21,24 +24,39 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const ServiziRoute = ServiziRouteImport.update({
+  id: '/servizi',
+  path: '/servizi',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const LavoriRoute = LavoriRouteImport.update({
+  id: '/lavori',
+  path: '/lavori',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const CookieRoute = CookieRouteImport.update({
+  id: '/cookie',
+  path: '/cookie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtelierRoute = AtelierRouteImport.update({
+  id: '/atelier',
+  path: '/atelier',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,56 +67,83 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/services': typeof ServicesRoute
+  '/$': typeof SplatRoute
+  '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
+  '/lavori': typeof LavoriRoute
+  '/privacy': typeof PrivacyRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/services': typeof ServicesRoute
+  '/$': typeof SplatRoute
+  '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
+  '/lavori': typeof LavoriRoute
+  '/privacy': typeof PrivacyRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/gallery': typeof GalleryRoute
-  '/services': typeof ServicesRoute
+  '/$': typeof SplatRoute
+  '/atelier': typeof AtelierRoute
+  '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
+  '/lavori': typeof LavoriRoute
+  '/privacy': typeof PrivacyRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/contact'
-    | '/gallery'
-    | '/services'
+    | '/$'
+    | '/atelier'
+    | '/contatti'
+    | '/cookie'
+    | '/lavori'
+    | '/privacy'
+    | '/servizi'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/gallery' | '/services' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/$'
+    | '/atelier'
+    | '/contatti'
+    | '/cookie'
+    | '/lavori'
+    | '/privacy'
+    | '/servizi'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/contact'
-    | '/gallery'
-    | '/services'
+    | '/$'
+    | '/atelier'
+    | '/contatti'
+    | '/cookie'
+    | '/lavori'
+    | '/privacy'
+    | '/servizi'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
-  GalleryRoute: typeof GalleryRoute
-  ServicesRoute: typeof ServicesRoute
+  SplatRoute: typeof SplatRoute
+  AtelierRoute: typeof AtelierRoute
+  ContattiRoute: typeof ContattiRoute
+  CookieRoute: typeof CookieRoute
+  LavoriRoute: typeof LavoriRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ServiziRoute: typeof ServiziRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -111,32 +156,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/servizi': {
+      id: '/servizi'
+      path: '/servizi'
+      fullPath: '/servizi'
+      preLoaderRoute: typeof ServiziRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/lavori': {
+      id: '/lavori'
+      path: '/lavori'
+      fullPath: '/lavori'
+      preLoaderRoute: typeof LavoriRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/cookie': {
+      id: '/cookie'
+      path: '/cookie'
+      fullPath: '/cookie'
+      preLoaderRoute: typeof CookieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atelier': {
+      id: '/atelier'
+      path: '/atelier'
+      fullPath: '/atelier'
+      preLoaderRoute: typeof AtelierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -151,22 +217,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ContactRoute: ContactRoute,
-  GalleryRoute: GalleryRoute,
-  ServicesRoute: ServicesRoute,
+  SplatRoute: SplatRoute,
+  AtelierRoute: AtelierRoute,
+  ContattiRoute: ContattiRoute,
+  CookieRoute: CookieRoute,
+  LavoriRoute: LavoriRoute,
+  PrivacyRoute: PrivacyRoute,
+  ServiziRoute: ServiziRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
