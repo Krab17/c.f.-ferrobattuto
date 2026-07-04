@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServiziRouteImport } from './routes/servizi'
 import { Route as LavoriRouteImport } from './routes/lavori'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiziRoute = ServiziRouteImport.update({
+  id: '/servizi',
+  path: '/servizi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LavoriRoute = LavoriRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/lavori': typeof LavoriRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/lavori': typeof LavoriRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/lavori': typeof LavoriRoute
+  '/servizi': typeof ServiziRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lavori' | '/sitemap.xml'
+  fullPaths: '/' | '/lavori' | '/servizi' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lavori' | '/sitemap.xml'
-  id: '__root__' | '/' | '/lavori' | '/sitemap.xml'
+  to: '/' | '/lavori' | '/servizi' | '/sitemap.xml'
+  id: '__root__' | '/' | '/lavori' | '/servizi' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LavoriRoute: typeof LavoriRoute
+  ServiziRoute: typeof ServiziRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servizi': {
+      id: '/servizi'
+      path: '/servizi'
+      fullPath: '/servizi'
+      preLoaderRoute: typeof ServiziRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lavori': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LavoriRoute: LavoriRoute,
+  ServiziRoute: ServiziRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
