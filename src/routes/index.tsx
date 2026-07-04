@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hammer, Ruler, Shield, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-import { createFileRoute } from "@tanstack/react-router";
 
 function HomePage() {
   return (
