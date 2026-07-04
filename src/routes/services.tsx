@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { DoorOpen, Fence, Grid3X3, Ruler, Sofa, Stairs } from "lucide-react";
+import { ArrowUp, DoorOpen, Fence, Grid3X3, Ruler, Sofa } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
