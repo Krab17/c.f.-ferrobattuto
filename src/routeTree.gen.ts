@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServiziRouteImport } from './routes/servizi'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LavoriRouteImport } from './routes/lavori'
+import { Route as CookieRouteImport } from './routes/cookie'
 import { Route as ContattiRouteImport } from './routes/contatti'
 import { Route as AtelierRouteImport } from './routes/atelier'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const LavoriRoute = LavoriRouteImport.update({
   path: '/lavori',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookieRoute = CookieRouteImport.update({
+  id: '/cookie',
+  path: '/cookie',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContattiRoute = ContattiRouteImport.update({
   id: '/contatti',
   path: '/contatti',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
   '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
   '/lavori': typeof LavoriRoute
   '/privacy': typeof PrivacyRoute
   '/servizi': typeof ServiziRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
   '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
   '/lavori': typeof LavoriRoute
   '/privacy': typeof PrivacyRoute
   '/servizi': typeof ServiziRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/atelier': typeof AtelierRoute
   '/contatti': typeof ContattiRoute
+  '/cookie': typeof CookieRoute
   '/lavori': typeof LavoriRoute
   '/privacy': typeof PrivacyRoute
   '/servizi': typeof ServiziRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atelier'
     | '/contatti'
+    | '/cookie'
     | '/lavori'
     | '/privacy'
     | '/servizi'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atelier'
     | '/contatti'
+    | '/cookie'
     | '/lavori'
     | '/privacy'
     | '/servizi'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atelier'
     | '/contatti'
+    | '/cookie'
     | '/lavori'
     | '/privacy'
     | '/servizi'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtelierRoute: typeof AtelierRoute
   ContattiRoute: typeof ContattiRoute
+  CookieRoute: typeof CookieRoute
   LavoriRoute: typeof LavoriRoute
   PrivacyRoute: typeof PrivacyRoute
   ServiziRoute: typeof ServiziRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LavoriRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookie': {
+      id: '/cookie'
+      path: '/cookie'
+      fullPath: '/cookie'
+      preLoaderRoute: typeof CookieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contatti': {
       id: '/contatti'
       path: '/contatti'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtelierRoute: AtelierRoute,
   ContattiRoute: ContattiRoute,
+  CookieRoute: CookieRoute,
   LavoriRoute: LavoriRoute,
   PrivacyRoute: PrivacyRoute,
   ServiziRoute: ServiziRoute,
