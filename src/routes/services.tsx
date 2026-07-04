@@ -20,7 +20,7 @@ const services = [
     description: "Progettazione e realizzazione di cancelli pedonali, carrabili, recinzioni e inferriate per esterni e interni.",
   },
   {
-    icon: Stairs,
+    icon: ArrowUp,
     title: "Scale e ringhiere",
     description: "Scale e ringhiere in ferro battuto, moderne o classiche, su misura per abitazioni e attività commerciali.",
   },
