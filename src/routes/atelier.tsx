@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
-const IMG = "/images";
+const IMG_CHI = "/images/chi-siamo";
+const IMG_PROCESSO = "/images/processo";
 
 export const Route = createFileRoute("/atelier")({
   head: () => ({
@@ -26,11 +27,11 @@ const metodo = [
 ];
 
 const gallery = [
-  `${IMG}/CFFerrobattuto-forgia-1.webp`,
-  `${IMG}/CFFerrobattuto-forgia-11.webp`,
-  `${IMG}/CFFerrobattuto-forgia-21.webp`,
-  `${IMG}/CFFerrobattuto-incudine-1.webp`,
-  `${IMG}/CFFerrobattuto-banco-1.webp`,
+  `${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`,
+  `${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`,
+  `${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`,
+  `${IMG_CHI}/CFFerrobattuto-incudine-1.webp`,
+  `${IMG_CHI}/CFFerrobattuto-banco-1.webp`,
 ];
 
 function AtelierPage() {
@@ -39,7 +40,7 @@ function AtelierPage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-carbone text-avorio">
         <MImage
-          src={`${IMG}/CFFerrobattuto-Franco-1.webp`}
+          src={`${IMG_CHI}/CFFerrobattuto-Franco-1.webp`}
           alt="Franco al lavoro nell'atelier C.F. Ferrobattuto"
           ratio="16/9"
           className="!absolute inset-0 h-full w-full !aspect-auto opacity-70"
@@ -68,7 +69,7 @@ function AtelierPage() {
               Ogni opera viene pensata e lavorata con cura, seguendo le esigenze del cliente e rispettando il carattere del ferro battuto. Non si tratta di produzione in serie, ma di lavorazioni realizzate una alla volta, con attenzione alla funzione, alla forma e alla durata.
             </p>
           </div>
-          <MImage src={`${IMG}/CFFerrobattuto-banco-1.webp`} alt="Il banco di lavoro dell'atelier" ratio="4/5" />
+          <MImage src={`${IMG_CHI}/CFFerrobattuto-banco-1.webp`} alt="Il banco di lavoro dell'atelier" ratio="4/5" />
         </div>
       </section>
 
@@ -91,9 +92,9 @@ function AtelierPage() {
             ))}
           </div>
           <div className="mt-16 grid gap-5 sm:grid-cols-3">
-            <MImage src={`${IMG}/CFFerrobattuto-incudine-1.webp`} alt="Incudine del laboratorio" ratio="4/5" />
-            <MImage src={`${IMG}/CFFerrobattuto-banco-1.webp`} alt="Banco di lavoro" ratio="4/5" />
-            <MImage src={`${IMG}/CFFerrobattuto-lavoro-incudine-1.webp`} alt="Battitura sull'incudine" ratio="4/5" />
+            <MImage src={`${IMG_CHI}/CFFerrobattuto-incudine-1.webp`} alt="Incudine del laboratorio" ratio="4/5" />
+            <MImage src={`${IMG_CHI}/CFFerrobattuto-banco-1.webp`} alt="Banco di lavoro" ratio="4/5" />
+            <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`} alt="Battitura sull'incudine" ratio="4/5" />
           </div>
         </div>
       </section>
@@ -112,9 +113,9 @@ function AtelierPage() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <MImage src={`${IMG}/CFFerrobattuto-forgia-11.webp`} alt="Forgia accesa" ratio="1/1" />
-              <MImage src={`${IMG}/CFFerrobattuto-componenti-1.webp`} alt="Componenti in ferro" ratio="1/1" />
-              <MImage src={`${IMG}/CFFerrobattuto-componente-forgiato-11.webp`} alt="Componente forgiato" ratio="1/1" className="col-span-2" />
+              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`} alt="Forgia accesa" ratio="1/1" />
+              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componenti in ferro" ratio="1/1" />
+              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componente forgiato" ratio="1/1" className="col-span-2" />
             </div>
           </div>
         </div>

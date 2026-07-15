@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
-const IMG = "/images";
+const IMG_HERO = "/images/hero";
+const IMG_PORTFOLIO = "/images/portfolio";
+const IMG_PROCESSO = "/images/processo";
 
 export const Route = createFileRoute("/lavori")({
   head: () => ({
@@ -28,36 +30,36 @@ const filters = [
 ];
 
 const projects = [
-  { id: "scala-marmo", title: "Scala in marmo con ringhiera decorativa", cat: "Scale e ringhiere", img: `${IMG}/CFFerrobattuto-scala-marmo-1.webp`, desc: "Ringhiera decorativa in ferro battuto realizzata su misura per scala in marmo." },
-  { id: "ringhiera-dettaglio", title: "Dettaglio ringhiera decorativa", cat: "Scale e ringhiere", img: `${IMG}/CFFerrobattuto-scala-dettaglio-1.webp`, desc: "Cura del dettaglio nelle volute e nella finitura del ferro." },
-  { id: "ringhiera-esterna", title: "Ringhiera esterna su misura", cat: "Scale e ringhiere", img: `${IMG}/CFFerrobattuto-ringhiera-1.webp`, desc: "Ringhiera per esterno dimensionata sul contesto architettonico." },
-  { id: "mensole-balcone", title: "Mensole decorative per balcone", cat: "Componenti edilizi", img: `${IMG}/CFFerrobattuto-mensole-balcone-1.webp`, desc: "Mensole forgiate a sostegno di un balcone in pietra." },
-  { id: "albero-forgiato", title: "Elemento decorativo forgiato", cat: "Elementi decorativi", img: `${IMG}/CFFerrobattuto-albero-forgiato-1.webp`, desc: "Composizione decorativa ispirata alle forme naturali." },
-  { id: "opera-ba", title: "Opera personalizzata in ferro", cat: "Lavori speciali", img: `${IMG}/CFFerrobattuto-BA-1.webp`, desc: "Realizzazione speciale su richiesta del committente." },
-  { id: "componenti-banco", title: "Componenti forgiati su banco", cat: "Componenti forgiati", img: `${IMG}/CFFerrobattuto-componenti-1.webp`, desc: "Serie di componenti forgiati pronti per la finitura." },
-  { id: "componente-lavorazione", title: "Componente forgiato in lavorazione", cat: "Componenti forgiati", img: `${IMG}/CFFerrobattuto-componente-forgiato-1.webp`, desc: "Fase intermedia della lavorazione di un componente." },
-  { id: "composizione", title: "Composizione decorativa in ferro", cat: "Elementi decorativi", img: `${IMG}/CFFerrobattuto-composizione-componenti-11.webp`, desc: "Composizione di elementi decorativi assemblati a mano." },
-  { id: "maglio", title: "Lavorazione al maglio", cat: "Lavori speciali", img: `${IMG}/CFFerrobattuto-lavoro-maglio-11.webp`, desc: "Il gesto artigianale della forgiatura al maglio." },
+  { id: "scala-marmo", title: "Scala in marmo con ringhiera decorativa", cat: "Scale e ringhiere", img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`, desc: "Ringhiera decorativa in ferro battuto realizzata su misura per scala in marmo." },
+  { id: "ringhiera-dettaglio", title: "Dettaglio ringhiera decorativa", cat: "Scale e ringhiere", img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-dettaglio-1.webp`, desc: "Cura del dettaglio nelle volute e nella finitura del ferro." },
+  { id: "ringhiera-esterna", title: "Ringhiera esterna su misura", cat: "Scale e ringhiere", img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp`, desc: "Ringhiera per esterno dimensionata sul contesto architettonico." },
+  { id: "mensole-balcone", title: "Mensole decorative per balcone", cat: "Componenti edilizi", img: `${IMG_PORTFOLIO}/CFFerrobattuto-mensole-balcone-1.webp`, desc: "Mensole forgiate a sostegno di un balcone in pietra." },
+  { id: "albero-forgiato", title: "Elemento decorativo forgiato", cat: "Elementi decorativi", img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`, desc: "Composizione decorativa ispirata alle forme naturali." },
+  { id: "opera-ba", title: "Opera personalizzata in ferro", cat: "Lavori speciali", img: `${IMG_PORTFOLIO}/CFFerrobattuto-BA-1.webp`, desc: "Realizzazione speciale su richiesta del committente." },
+  { id: "componenti-banco", title: "Componenti forgiati su banco", cat: "Componenti forgiati", img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`, desc: "Serie di componenti forgiati pronti per la finitura." },
+  { id: "componente-lavorazione", title: "Componente forgiato in lavorazione", cat: "Componenti forgiati", img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`, desc: "Fase intermedia della lavorazione di un componente." },
+  { id: "composizione", title: "Composizione decorativa in ferro", cat: "Elementi decorativi", img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`, desc: "Composizione di elementi decorativi assemblati a mano." },
+  { id: "maglio", title: "Lavorazione al maglio", cat: "Lavori speciali", img: `${IMG_HERO}/CFFerrobattuto-lavoro-maglio-2.webp`, desc: "Il gesto artigianale della forgiatura al maglio." },
 ];
 
 const schede = [
   {
     title: "Scala in marmo con ringhiera decorativa",
-    img: `${IMG}/CFFerrobattuto-scala-marmo-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
     contesto: "Interno residenziale con scala in marmo che richiedeva una ringhiera dal carattere elegante e discreto.",
     soluzione: "Ringhiera in ferro battuto realizzata su misura, con volute decorative studiate per accompagnare il ritmo della scala.",
     dettagli: "Finiture curate a mano, patina calda in accordo con il tono del marmo.",
   },
   {
     title: "Mensole decorative per balcone",
-    img: `${IMG}/CFFerrobattuto-mensole-balcone-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-mensole-balcone-1.webp`,
     contesto: "Sostegno decorativo per un balcone in pietra in un contesto storico.",
     soluzione: "Mensole forgiate su disegno, dimensionate per unire funzione portante e valore decorativo.",
     dettagli: "Lavorazione con volute morbide, finitura protetta per esterno.",
   },
   {
     title: "Opera personalizzata in ferro",
-    img: `${IMG}/CFFerrobattuto-BA-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-BA-1.webp`,
     contesto: "Richiesta speciale del committente, sviluppata a partire da un'idea condivisa in laboratorio.",
     soluzione: "Realizzazione unica, studiata nelle proporzioni e nei dettagli per il contesto di destinazione.",
     dettagli: "Ogni parte lavorata a mano, con particolare cura nell'assemblaggio.",
@@ -70,7 +72,7 @@ function LavoriPage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-carbone text-avorio">
         <MImage
-          src={`${IMG}/CFFerrobattuto-scala-marmo-1.webp`}
+          src={`${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`}
           alt="Scala in marmo con ringhiera in ferro battuto"
           ratio="16/9"
           className="!absolute inset-0 h-full w-full !aspect-auto opacity-70"

@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
-const IMG = "/images";
+const IMG_PORTFOLIO = "/images/portfolio";
+const IMG_PROCESSO = "/images/processo";
 
 export const Route = createFileRoute("/servizi")({
   head: () => ({
@@ -22,49 +23,49 @@ const services = [
   {
     id: "cancelli",
     title: "Cancelli in ferro battuto",
-    img: `${IMG}/CFFerrobattuto-lavoro-incudine-1.webp`,
+    img: `${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`,
     text: "Cancelli realizzati su misura, progettati in base allo stile dell'abitazione e lavorati artigianalmente per un risultato solido, decorativo e durevole.",
     bullets: ["Ingressi privati", "Ville", "Cortili", "Recinzioni", "Contesti storici"],
   },
   {
     id: "ringhiere",
     title: "Ringhiere, parapetti e scale",
-    img: `${IMG}/CFFerrobattuto-scala-marmo-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
     text: "Ringhiere e parapetti in ferro battuto pensati per integrarsi con il contesto architettonico, valorizzando scale, balconi e spazi interni o esterni.",
     bullets: ["Scale interne", "Balconi", "Parapetti esterni", "Soppalchi"],
   },
   {
     id: "inferriate",
     title: "Inferriate e recinzioni",
-    img: `${IMG}/CFFerrobattuto-ringhiera-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp`,
     text: "Soluzioni su misura per protezione e decoro, realizzate con attenzione alle proporzioni, allo stile dell'edificio e alla qualità costruttiva.",
     bullets: ["Finestre", "Porte-finestre", "Recinzioni decorative"],
   },
   {
     id: "componenti",
     title: "Componenti forgiati",
-    img: `${IMG}/CFFerrobattuto-componente-forgiato-1.webp`,
+    img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`,
     text: "Componenti realizzati a mano per edilizia, restauro o lavorazioni speciali: elementi decorativi, parti metalliche, coprichiave e dettagli su richiesta.",
     bullets: ["Elementi per edilizia", "Riproduzioni su modello", "Dettagli decorativi"],
   },
   {
     id: "decorativi",
     title: "Elementi decorativi",
-    img: `${IMG}/CFFerrobattuto-composizione-componenti-11.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`,
     text: "Elementi decorativi in ferro battuto pensati per dare carattere a ingressi, interni, esterni e dettagli architettonici.",
     bullets: ["Composizioni ornamentali", "Insegne", "Applicazioni decorative"],
   },
   {
     id: "personalizzate",
     title: "Lavorazioni personalizzate",
-    img: `${IMG}/CFFerrobattuto-BA-1.webp`,
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-BA-1.webp`,
     text: "Realizzazioni speciali su richiesta, sviluppate a partire da un'idea, un disegno, un'esigenza tecnica o un elemento da riprodurre.",
     bullets: ["Pezzi unici su disegno", "Riproduzioni fedeli", "Progetti dedicati"],
   },
   {
     id: "restauro",
     title: "Restauro e recupero",
-    img: `${IMG}/CFFerrobattuto-forgia-31.webp`,
+    img: `${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`,
     text: "C.F. Ferrobattuto può valutare anche interventi di recupero su opere esistenti in ferro battuto, come cancelli, ringhiere, inferriate o elementi decorativi da ripristinare, integrare o completare.",
     bullets: ["Valutazione dello stato", "Integrazione di parti mancanti", "Recupero decorativo"],
     cta: { label: "Invia alcune foto per una valutazione", to: "/contatti" as const },

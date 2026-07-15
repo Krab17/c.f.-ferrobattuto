@@ -1,25 +1,30 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 const WHATSAPP = "https://wa.me/393804668154";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const [logoOk, setLogoOk] = useState(false);
 
   return (
     <footer className="section-dark border-t border-white/5">
       <div className="container mx-auto px-5 py-16 md:px-8 md:py-20">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="space-y-5 md:col-span-1">
-            <img
-              src="/logo/cf-ferrobattuto-completo.png"
-              alt="C.F. Ferrobattuto"
-              className="h-14 w-auto"
-              onError={(e) => ((e.currentTarget as HTMLImageElement).style.display = "none")}
-            />
-            <p className="font-serif text-2xl leading-snug text-avorio">
-              C.F. Ferrobattuto
-            </p>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo/cf-ferrobattuto-completo.png"
+                alt="C.F. Ferrobattuto"
+                className={`h-14 w-auto ${logoOk ? "block" : "hidden"}`}
+                onLoad={() => setLogoOk(true)}
+                onError={() => setLogoOk(false)}
+              />
+              <span className={`font-serif text-2xl leading-snug text-avorio ${logoOk ? "hidden" : "block"}`}>
+                C.F. <span className="text-rame">Ferrobattuto</span>
+              </span>
+            </div>
             <p className="text-sm leading-relaxed text-avorio/60">
               Ferro battuto artigianale, lavorato a mano e su misura da oltre 20 anni.
             </p>
