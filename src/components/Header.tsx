@@ -35,13 +35,11 @@ export function Header() {
           <img
             src="/logo/cf-ferrobattuto-orizzontale.png"
             alt="C.F. Ferrobattuto"
-            className="h-9 w-auto md:h-10"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-              (e.currentTarget.nextElementSibling as HTMLElement | null)?.classList.remove("hidden");
-            }}
+            className={`h-9 w-auto md:h-10 ${logoOk ? "block" : "hidden"}`}
+            onLoad={() => setLogoOk(true)}
+            onError={() => setLogoOk(false)}
           />
-          <span className="hidden font-serif text-xl tracking-wide text-avorio">
+          <span className={`font-serif text-xl tracking-wide text-avorio ${logoOk ? "hidden" : "block"}`}>
             C.F. <span className="text-rame">Ferrobattuto</span>
           </span>
         </Link>
