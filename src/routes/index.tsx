@@ -22,21 +22,21 @@ export const Route = createFileRoute("/")({
 });
 
 const servizi = [
-  { icon: Wrench, title: "Cancelli", desc: "Cancelli pedonali e carrabili su misura, disegnati sullo stile dell'abitazione.", img: `${IMG}/CFFerrobattuto-lavoro-incudine-1.webp` },
-  { icon: Ruler, title: "Ringhiere e scale", desc: "Ringhiere, parapetti e scale in ferro battuto per interni ed esterni.", img: `${IMG}/CFFerrobattuto-scala-marmo-1.webp` },
-  { icon: Hammer, title: "Inferriate", desc: "Soluzioni di protezione decorativa proporzionate al contesto architettonico.", img: `${IMG}/CFFerrobattuto-ringhiera-1.webp` },
-  { icon: Flame, title: "Componenti forgiati", desc: "Elementi forgiati per edilizia, restauro e lavorazioni speciali.", img: `${IMG}/CFFerrobattuto-componente-forgiato-1.webp` },
-  { icon: Sparkles, title: "Elementi decorativi", desc: "Dettagli e composizioni che danno carattere a ingressi, interni ed esterni.", img: `${IMG}/CFFerrobattuto-albero-forgiato-1.webp` },
-  { icon: LeafyGreen, title: "Restauro e recupero", desc: "Recupero e integrazione di cancelli, ringhiere e opere esistenti in ferro battuto.", img: `${IMG}/CFFerrobattuto-forgia-31.webp` },
+  { icon: Wrench, title: "Cancelli", desc: "Cancelli pedonali e carrabili su misura, disegnati sullo stile dell'abitazione.", img: `${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp` },
+  { icon: Ruler, title: "Ringhiere e scale", desc: "Ringhiere, parapetti e scale in ferro battuto per interni ed esterni.", img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp` },
+  { icon: Hammer, title: "Inferriate", desc: "Soluzioni di protezione decorativa proporzionate al contesto architettonico.", img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp` },
+  { icon: Flame, title: "Componenti forgiati", desc: "Elementi forgiati per edilizia, restauro e lavorazioni speciali.", img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp` },
+  { icon: Sparkles, title: "Elementi decorativi", desc: "Dettagli e composizioni che danno carattere a ingressi, interni ed esterni.", img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp` },
+  { icon: LeafyGreen, title: "Restauro e recupero", desc: "Recupero e integrazione di cancelli, ringhiere e opere esistenti in ferro battuto.", img: `${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp` },
 ];
 
 const portfolio = [
-  { img: `${IMG}/CFFerrobattuto-scala-marmo-1.webp`, cap: "Scala in marmo con ringhiera decorativa" },
-  { img: `${IMG}/CFFerrobattuto-scala-dettaglio-1.webp`, cap: "Dettaglio ringhiera in ferro battuto" },
-  { img: `${IMG}/CFFerrobattuto-ringhiera-1.webp`, cap: "Ringhiera esterna su misura" },
-  { img: `${IMG}/CFFerrobattuto-mensole-balcone-1.webp`, cap: "Mensole decorative per balcone" },
-  { img: `${IMG}/CFFerrobattuto-albero-forgiato-1.webp`, cap: "Elemento decorativo forgiato" },
-  { img: `${IMG}/CFFerrobattuto-BA-1.webp`, cap: "Opera personalizzata in ferro" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`, cap: "Scala in marmo con ringhiera decorativa" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-dettaglio-1.webp`, cap: "Dettaglio ringhiera in ferro battuto" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp`, cap: "Ringhiera esterna su misura" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-mensole-balcone-1.webp`, cap: "Mensole decorative per balcone" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`, cap: "Elemento decorativo forgiato" },
+  { img: `${IMG_PORTFOLIO}/CFFerrobattuto-BA-1.webp`, cap: "Opera personalizzata in ferro" },
 ];
 
 const processo = [
@@ -62,7 +62,7 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate min-h-[86vh] overflow-hidden bg-carbone text-avorio">
         <MImage
-          src={`${IMG}/CFFerrobattuto-lavoro-maglio-1.webp`}
+          src={`${IMG_HERO}/CFFerrobattuto-lavoro-maglio-1.webp`}
           alt="Fabbro al lavoro con il maglio nel laboratorio C.F. Ferrobattuto"
           ratio="16/9"
           className="!absolute inset-0 h-full w-full !aspect-auto"
@@ -106,7 +106,7 @@ function HomePage() {
             </p>
           </div>
           <MImage
-            src={`${IMG}/CFFerrobattuto-lavoro-incudine-11.webp`}
+            src={`${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`}
             alt="Lavorazione manuale sull'incudine"
             ratio="4/5"
           />
@@ -182,10 +182,10 @@ function HomePage() {
                 Ogni lavorazione segue un processo fatto di ascolto, valutazione tecnica, gesto manuale e cura del dettaglio.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-4">
-                <MImage src={`${IMG}/CFFerrobattuto-forgia-31.webp`} alt="Forgia in laboratorio" ratio="1/1" />
-                <MImage src={`${IMG}/CFFerrobattuto-lavoro-maglio-11.webp`} alt="Lavorazione al maglio" ratio="1/1" />
-                <MImage src={`${IMG}/CFFerrobattuto-lavoro-incudine-1.webp`} alt="Battitura sull'incudine" ratio="1/1" />
-                <MImage src={`${IMG}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componente forgiato" ratio="1/1" />
+                <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`} alt="Forgia in laboratorio" ratio="1/1" />
+                <MImage src={`${IMG_HERO}/CFFerrobattuto-lavoro-maglio-2.webp`} alt="Lavorazione al maglio" ratio="1/1" />
+                <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`} alt="Battitura sull'incudine" ratio="1/1" />
+                <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componente forgiato" ratio="1/1" />
               </div>
             </div>
             <ol className="divide-y divide-white/10 border-y border-white/10">
@@ -226,7 +226,7 @@ function HomePage() {
       {/* ATELIER */}
       <section className="py-24 md:py-32">
         <div className="container mx-auto grid gap-14 px-6 md:grid-cols-2 md:items-center md:gap-20 md:px-10">
-          <MImage src={`${IMG}/CFFerrobattuto-Franco-1.webp`} alt="Franco al lavoro nell'atelier C.F. Ferrobattuto" ratio="4/5" />
+          <MImage src={`${IMG_CHI}/CFFerrobattuto-Franco-1.webp`} alt="Franco al lavoro nell'atelier C.F. Ferrobattuto" ratio="4/5" />
           <div>
             <p className="eyebrow">L'atelier</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
@@ -245,7 +245,7 @@ function HomePage() {
       {/* CTA FINALE */}
       <section className="relative isolate overflow-hidden bg-carbone text-avorio">
         <MImage
-          src={`${IMG}/CFFerrobattuto-forgia-31.webp`}
+          src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`}
           alt=""
           ratio="16/6"
           className="!absolute inset-0 h-full w-full !aspect-auto opacity-40"
