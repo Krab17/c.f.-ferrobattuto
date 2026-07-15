@@ -12,6 +12,7 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [logoOk, setLogoOk] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
