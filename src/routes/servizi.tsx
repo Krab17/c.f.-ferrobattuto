@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
-const IMG = "/images";
+const IMG_PORTFOLIO = "/images/portfolio";
+const IMG_PROCESSO = "/images/processo";
 
 export const Route = createFileRoute("/servizi")({
   head: () => ({
