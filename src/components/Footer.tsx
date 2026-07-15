@@ -6,6 +6,7 @@ const WHATSAPP = "https://wa.me/393804668154";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const [logoOk, setLogoOk] = useState(false);
 
   return (
     <footer className="section-dark border-t border-white/5">
