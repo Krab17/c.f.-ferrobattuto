@@ -16,23 +16,43 @@ import { Footer } from "@/components/Footer";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { Toaster } from "@/components/ui/sonner";
 
+const BASE_URL = "https://cfferrobattuto.it";
+const SOCIAL_IMAGE = `${BASE_URL}/og/cf-ferrobattuto-social.webp`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "C.F. Ferrobattuto",
+  url: BASE_URL,
+  telephone: "+393804668154",
+  email: "Info@CFFerrobattuto.com",
+  image: SOCIAL_IMAGE,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Via del Molino 10",
+    postalCode: "12060",
+    addressRegion: "Cuneo",
+    addressCountry: "IT",
+  },
+  areaServed: ["Provincia di Cuneo", "Nord Italia"],
+  sameAs: ["https://instagram.com/CFFerrobattuto"],
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h1 className="font-serif text-7xl text-foreground">404</h1>
+        <h2 className="mt-4 font-serif text-3xl text-foreground">Pagina non trovata</h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          La pagina che cerchi non esiste oppure è stata spostata.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <Link
+          to="/"
+          className="mt-7 inline-flex items-center justify-center bg-rame px-6 py-3 text-sm text-avorio transition-colors hover:bg-ruggine"
+        >
+          Torna alla home
+        </Link>
       </div>
     </div>
   );
@@ -48,27 +68,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <h1 className="font-serif text-3xl text-foreground">La pagina non si è caricata</h1>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Puoi riprovare oppure tornare alla pagina iniziale.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="mt-7 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center bg-rame px-5 py-3 text-sm text-avorio transition-colors hover:bg-ruggine"
           >
-            Try again
+            Riprova
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center border border-border px-5 py-3 text-sm text-foreground transition-colors hover:border-rame hover:text-rame"
           >
-            Go home
+            Torna alla home
           </a>
         </div>
       </div>
@@ -82,20 +100,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "C.F. Ferrobattuto — Ferro battuto artigianale su misura" },
-      { name: "description", content: "Laboratorio artigiano di ferro battuto a Cuneo. Cancelli, ringhiere, componenti forgiati ed elementi decorativi lavorati a mano e su misura, in tutto il Nord Italia." },
+      {
+        name: "description",
+        content:
+          "C.F. Ferrobattuto realizza opere e componenti in ferro battuto su misura in provincia di Cuneo e nel Nord Italia.",
+      },
       { name: "author", content: "C.F. Ferrobattuto" },
+      { name: "robots", content: "index,follow,max-image-preview:large" },
       { property: "og:site_name", content: "C.F. Ferrobattuto" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "it_IT" },
+      { property: "og:image", content: SOCIAL_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Lavorazione del ferro nel laboratorio C.F. Ferrobattuto",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: SOCIAL_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap",
       },
     ],
   }),
@@ -110,6 +142,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="it">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
       </head>
       <body>
         {children}
