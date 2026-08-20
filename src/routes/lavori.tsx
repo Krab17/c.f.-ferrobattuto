@@ -104,11 +104,12 @@ function LavoriPage() {
           <div className="max-w-2xl">
             <p className="eyebrow">Un progetto da vicino</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-avorio md:text-5xl">
-              Scala in marmo e ringhiera decorativa
+              Ringhiera per scala in marmo.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-avorio/70">
-              La ringhiera segue l'andamento della scala e diventa parte dell'interno. Le viste
-              d'insieme e i dettagli mostrano il rapporto tra ferro, marmo, volute e finitura.
+              La ringhiera segue lo stretto andamento della scala e diventa parte dell'interno.
+              Questa realizzazione è stata fatta su misura. La difficoltà sta nel parapetto
+              interno, che in poco spazio ha una curvatura molto accentuata.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
