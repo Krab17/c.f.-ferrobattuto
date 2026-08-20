@@ -33,20 +33,20 @@ export const Route = createFileRoute("/")({
 const lavorazioni = [
   {
     icon: Building2,
-    title: "Opere architettoniche",
-    desc: "Cancelli, ringhiere, parapetti, inferriate e recinzioni progettati sulle misure e sul contesto.",
+    title: "Opere",
+    desc: "Cancelli, ringhiere, parapetti, inferriate e recinzioni progettati su misura.",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
   },
   {
     icon: Flame,
     title: "Componenti forgiati",
-    desc: "Parti in ferro per edilizia e lavorazioni speciali, realizzate su disegno, modello o richiesta specifica.",
+    desc: "Parti in ferro per edilizia e lavorazioni speciali, realizzate a disegno, da campione o da richiesta specifica.",
     img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`,
   },
   {
     icon: Sparkles,
     title: "Elementi decorativi",
-    desc: "Composizioni e dettagli in ferro lavorati per integrarsi con interni, esterni e architetture esistenti.",
+    desc: "Composizioni e dettagli in ferro lavorati per sposare interni, esterni e architetture esistenti.",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`,
   },
   {
@@ -120,8 +120,8 @@ function HomePage() {
               <span className="italic text-rame">realizzato a mano e su misura</span>.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-avorio/80 md:text-xl">
-              Opere e componenti in ferro progettati per il luogo in cui verranno installati e
-              lavorati uno alla volta in laboratorio.
+              Opere e componenti in ferro battuto progettati su misura e realizzati
+              artigianalmente.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -150,9 +150,9 @@ function HomePage() {
               <span className="italic text-rame">senza produzione in serie</span>.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              In provincia di Cuneo realizziamo opere, componenti forgiati e dettagli architettonici
-              su richiesta. Ogni lavoro viene valutato sulle misure, sulla funzione e sul contesto:
-              il progetto guida la lavorazione, non il contrario.
+              Realizziamo opere, componenti forgiati e dettagli architettonici su richiesta. Ogni
+              lavoro viene valutato sulle misure, sulla funzione e sul contesto: il progetto guida
+              il processo di produzione.
             </p>
           </div>
           <MImage
@@ -267,8 +267,8 @@ function HomePage() {
               Il ferro prende forma in officina
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Franco lavora il ferro con forgia, incudine, maglio e banco da oltre vent'anni. Ogni
-              pezzo viene seguito in laboratorio, dalla definizione delle proporzioni alla finitura
+              Lavoriamo il ferro con forgia, incudine, maglio e banco da oltre vent'anni. Ogni pezzo
+              viene seguito in laboratorio, dalla definizione delle proporzioni alla finitura
               finale.
             </p>
             <Link
@@ -292,7 +292,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-carbone/70" />
         <div className="relative z-10 container mx-auto px-6 py-20 text-center md:px-10 md:py-28">
           <h2 className="mx-auto max-w-3xl font-serif text-4xl leading-tight md:text-5xl">
-            Hai un progetto in ferro?
+            Hai un'idea di ferro battuto?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-avorio/70">
             Inviaci una descrizione, alcune misure o una foto del contesto per una prima
