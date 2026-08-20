@@ -147,7 +147,7 @@ function HomePage() {
             <p className="eyebrow">C.F. Ferrobattuto</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
               Dal disegno al ferro,{" "}
-              <span className="italic text-rame">senza produzione in serie</span>.
+              <span className="italic text-rame">artigianalmente</span>.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Realizziamo opere, componenti forgiati e dettagli architettonici su richiesta. Ogni
