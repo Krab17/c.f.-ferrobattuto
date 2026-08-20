@@ -1,18 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/lavori", label: "Lavori" },
-  { to: "/servizi", label: "Servizi" },
-  { to: "/atelier", label: "Atelier" },
-  { to: "/contatti", label: "Contatti" },
+  { to: "/servizi", label: "Lavorazioni" },
+  { to: "/atelier", label: "Laboratorio" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [logoOk, setLogoOk] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,27 +22,16 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b transition-colors ${
-        scrolled
-          ? "border-border bg-carbone/95 backdrop-blur text-avorio"
-          : "border-transparent bg-carbone text-avorio"
-      }`}
+      className={`sticky top-0 z-50 w-full border-b transition-colors ${scrolled ? "border-border bg-carbone/95 text-avorio backdrop-blur" : "border-transparent bg-carbone text-avorio"}`}
     >
       <div className="container mx-auto flex h-18 items-center justify-between px-5 py-4 md:px-8">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img
-            src="/logo/cf-ferrobattuto-orizzontale.png"
-            alt="C.F. Ferrobattuto"
-            className={`h-9 w-auto md:h-10 ${logoOk ? "block" : "hidden"}`}
-            onLoad={() => setLogoOk(true)}
-            onError={() => setLogoOk(false)}
-          />
-          <span className={`font-serif text-xl tracking-wide text-avorio ${logoOk ? "hidden" : "block"}`}>
+        <Link to="/" className="shrink-0" aria-label="C.F. Ferrobattuto - Home">
+          <span className="font-serif text-xl tracking-wide text-avorio md:text-2xl">
             C.F. <span className="text-rame">Ferrobattuto</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Navigazione principale">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -58,24 +45,30 @@ export function Header() {
           ))}
           <Link
             to="/contatti"
-            className="inline-flex items-center border border-rame px-5 py-2.5 text-[12px] uppercase tracking-[0.2em] text-avorio transition-colors hover:bg-rame hover:text-avorio"
+            className="inline-flex items-center border border-rame px-5 py-2.5 text-[12px] uppercase tracking-[0.2em] text-avorio transition-colors hover:bg-rame"
           >
-            Richiedi preventivo
+            Raccontaci il progetto
           </Link>
         </nav>
 
         <button
-          className="md:hidden p-2 text-avorio"
+          type="button"
+          className="p-2 text-avorio md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+          aria-label={open ? "Chiudi menu" : "Apri menu"}
+          aria-expanded={open}
+          aria-controls="menu-mobile"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-carbone md:hidden">
-          <nav className="container mx-auto flex flex-col gap-1 px-5 py-6">
+        <div id="menu-mobile" className="border-t border-white/10 bg-carbone md:hidden">
+          <nav
+            className="container mx-auto flex flex-col gap-1 px-5 py-6"
+            aria-label="Navigazione mobile"
+          >
             {navLinks.map((l) => (
               <Link
                 key={l.to}
@@ -93,7 +86,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex items-center justify-center border border-rame px-5 py-3 text-[12px] uppercase tracking-[0.2em] text-avorio hover:bg-rame"
             >
-              Richiedi preventivo
+              Raccontaci il progetto
             </Link>
           </nav>
         </div>

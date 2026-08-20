@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: sostituire con l'URL definitivo del progetto una volta pubblicato.
-const BASE_URL = "";
+const BASE_URL = "https://cfferrobattuto.it";
 
 interface SitemapEntry {
   path: string;
-  lastmod?: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
@@ -16,36 +14,35 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/", changefreq: "monthly", priority: "1.0" },
           { path: "/lavori", changefreq: "monthly", priority: "0.9" },
           { path: "/servizi", changefreq: "monthly", priority: "0.9" },
-          { path: "/atelier", changefreq: "monthly", priority: "0.8" },
-          { path: "/contatti", changefreq: "monthly", priority: "0.7" },
+          { path: "/atelier", changefreq: "yearly", priority: "0.7" },
+          { path: "/contatti", changefreq: "yearly", priority: "0.7" },
         ];
 
         const urls = entries.map((e) =>
           [
-            `  <url>`,
+            "  <url>",
             `    <loc>${BASE_URL}${e.path}</loc>`,
-            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
-            `  </url>`,
+            "  </url>",
           ]
             .filter(Boolean)
             .join("\n"),
         );
 
         const xml = [
-          `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          '<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
           ...urls,
-          `</urlset>`,
+          "</urlset>",
         ].join("\n");
 
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
+            "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600",
           },
         });

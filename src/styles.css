@@ -54,58 +54,60 @@
 
   /* Brand raw */
   --carbone: #121212;
-  --antracite: #2B2B2B;
-  --ferro: #5A5650;
-  --avorio: #F4EFE6;
-  --bianco-caldo: #FAF7F0;
-  --rame: #A4633C;
-  --ruggine: #7A3E2A;
-  --bronzo: #6B563A;
+  --antracite: #2b2b2b;
+  --ferro: #5a5650;
+  --avorio: #f4efe6;
+  --bianco-caldo: #faf7f0;
+  --rame: #a4633c;
+  --ruggine: #7a3e2a;
+  --bronzo: #6b563a;
 
   /* Semantic */
-  --background: #FAF7F0;
-  --foreground: #2B2B2B;
-  --card: #F4EFE6;
-  --card-foreground: #2B2B2B;
-  --popover: #FAF7F0;
-  --popover-foreground: #2B2B2B;
-  --primary: #A4633C;
-  --primary-foreground: #FAF7F0;
-  --secondary: #F4EFE6;
-  --secondary-foreground: #2B2B2B;
-  --muted: #EDE6D8;
-  --muted-foreground: #5A5650;
-  --accent: #6B563A;
-  --accent-foreground: #FAF7F0;
-  --destructive: #7A3E2A;
-  --destructive-foreground: #FAF7F0;
-  --border: #E3DAC8;
-  --input: #E3DAC8;
-  --ring: #A4633C;
+  --background: #faf7f0;
+  --foreground: #2b2b2b;
+  --card: #f4efe6;
+  --card-foreground: #2b2b2b;
+  --popover: #faf7f0;
+  --popover-foreground: #2b2b2b;
+  --primary: #a4633c;
+  --primary-foreground: #faf7f0;
+  --secondary: #f4efe6;
+  --secondary-foreground: #2b2b2b;
+  --muted: #ede6d8;
+  --muted-foreground: #5a5650;
+  --accent: #6b563a;
+  --accent-foreground: #faf7f0;
+  --destructive: #7a3e2a;
+  --destructive-foreground: #faf7f0;
+  --border: #e3dac8;
+  --input: #e3dac8;
+  --ring: #a4633c;
 }
 
 .dark {
   --background: #121212;
-  --foreground: #F4EFE6;
+  --foreground: #f4efe6;
   --card: #1c1c1c;
-  --card-foreground: #F4EFE6;
+  --card-foreground: #f4efe6;
   --popover: #1c1c1c;
-  --popover-foreground: #F4EFE6;
-  --primary: #A4633C;
-  --primary-foreground: #FAF7F0;
-  --secondary: #2B2B2B;
-  --secondary-foreground: #F4EFE6;
-  --muted: #2B2B2B;
-  --muted-foreground: #A8A198;
-  --accent: #6B563A;
-  --accent-foreground: #F4EFE6;
+  --popover-foreground: #f4efe6;
+  --primary: #a4633c;
+  --primary-foreground: #faf7f0;
+  --secondary: #2b2b2b;
+  --secondary-foreground: #f4efe6;
+  --muted: #2b2b2b;
+  --muted-foreground: #a8a198;
+  --accent: #6b563a;
+  --accent-foreground: #f4efe6;
   --border: #2f2f2f;
   --input: #2f2f2f;
-  --ring: #A4633C;
+  --ring: #a4633c;
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -113,7 +115,12 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -135,9 +142,32 @@
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @utility fade-up {
   animation: fadeUp 0.9s ease-out both;
+}
+
+/* Accessibilità: riduce le animazioni quando richiesto dal sistema operativo. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--rame);
+  outline-offset: 3px;
 }

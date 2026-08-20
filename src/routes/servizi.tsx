@@ -2,173 +2,130 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
+const BASE_URL = "https://cfferrobattuto.it";
 const IMG_PORTFOLIO = "/images/portfolio";
 const IMG_PROCESSO = "/images/processo";
 
 export const Route = createFileRoute("/servizi")({
   head: () => ({
     meta: [
-      { title: "Servizi — Lavorazioni artigianali in ferro battuto | C.F. Ferrobattuto" },
-      { name: "description", content: "Cancelli, ringhiere, inferriate, componenti forgiati, elementi decorativi, restauro: lavorazioni artigianali in ferro battuto su misura." },
-      { property: "og:title", content: "Servizi — C.F. Ferrobattuto" },
-      { property: "og:description", content: "Lavorazioni artigianali in ferro battuto su misura per abitazioni, edifici storici e professionisti." },
-      { property: "og:url", content: "/servizi" },
+      { title: "Lavorazioni in ferro battuto su misura | C.F. Ferrobattuto" },
+      {
+        name: "description",
+        content:
+          "Cancelli, ringhiere, inferriate, componenti forgiati ed elementi decorativi in ferro battuto, realizzati su misura in provincia di Cuneo.",
+      },
+      {
+        property: "og:title",
+        content: "Lavorazioni in ferro battuto su misura | C.F. Ferrobattuto",
+      },
+      {
+        property: "og:description",
+        content:
+          "Opere, componenti forgiati e lavorazioni speciali realizzate su richiesta.",
+      },
+      { property: "og:url", content: `${BASE_URL}/servizi` },
     ],
-    links: [{ rel: "canonical", href: "/servizi" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/servizi` }],
   }),
   component: ServiziPage,
 });
 
 const services = [
   {
-    id: "cancelli",
-    title: "Cancelli in ferro battuto",
-    img: `${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`,
-    text: "Cancelli realizzati su misura, progettati in base allo stile dell'abitazione e lavorati artigianalmente per un risultato solido, decorativo e durevole.",
-    bullets: ["Ingressi privati", "Ville", "Cortili", "Recinzioni", "Contesti storici"],
-  },
-  {
-    id: "ringhiere",
-    title: "Ringhiere, parapetti e scale",
+    id: "opere-architettoniche",
+    title: "Opere in ferro battuto",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
-    text: "Ringhiere e parapetti in ferro battuto pensati per integrarsi con il contesto architettonico, valorizzando scale, balconi e spazi interni o esterni.",
-    bullets: ["Scale interne", "Balconi", "Parapetti esterni", "Soppalchi"],
+    text: "Cancelli, ringhiere, parapetti, inferriate e recinzioni vengono dimensionati sulle misure reali e sul carattere dell'edificio. Forma e decorazione vengono definite in funzione del luogo, evitando soluzioni standard quando il progetto richiede proporzioni specifiche.",
+    bullets: ["Cancelli e ingressi", "Ringhiere e parapetti", "Inferriate e recinzioni"],
   },
   {
-    id: "inferriate",
-    title: "Inferriate e recinzioni",
-    img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp`,
-    text: "Soluzioni su misura per protezione e decoro, realizzate con attenzione alle proporzioni, allo stile dell'edificio e alla qualità costruttiva.",
-    bullets: ["Finestre", "Porte-finestre", "Recinzioni decorative"],
+    id: "componenti-forgiati",
+    title: "Componenti forgiati per edilizia",
+    img: `${IMG_PORTFOLIO}/CFFerrobattuto-mensole-balcone-1.webp`,
+    text: "Realizziamo componenti che non si trovano normalmente a catalogo: mensole, coprichiave, elementi decorativi e parti metalliche sviluppate da un disegno, da un modello esistente o da una richiesta tecnica.",
+    bullets: ["Coprichiave e mensole", "Parti su disegno", "Riproduzione di elementi esistenti"],
   },
   {
-    id: "componenti",
-    title: "Componenti forgiati",
-    img: `${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`,
-    text: "Componenti realizzati a mano per edilizia, restauro o lavorazioni speciali: elementi decorativi, parti metalliche, coprichiave e dettagli su richiesta.",
-    bullets: ["Elementi per edilizia", "Riproduzioni su modello", "Dettagli decorativi"],
-  },
-  {
-    id: "decorativi",
+    id: "elementi-decorativi",
     title: "Elementi decorativi",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-albero-forgiato-1.webp`,
-    text: "Elementi decorativi in ferro battuto pensati per dare carattere a ingressi, interni, esterni e dettagli architettonici.",
-    bullets: ["Composizioni ornamentali", "Insegne", "Applicazioni decorative"],
+    text: "Il ferro può diventare anche un elemento grafico e decorativo. Realizziamo composizioni, dettagli e applicazioni pensati per dialogare con facciate, ingressi, interni e spazi esterni.",
+    bullets: ["Composizioni ornamentali", "Dettagli architettonici", "Elementi personalizzati"],
   },
   {
-    id: "personalizzate",
-    title: "Lavorazioni personalizzate",
+    id: "lavorazioni-speciali",
+    title: "Lavorazioni speciali su richiesta",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-BA-1.webp`,
-    text: "Realizzazioni speciali su richiesta, sviluppate a partire da un'idea, un disegno, un'esigenza tecnica o un elemento da riprodurre.",
-    bullets: ["Pezzi unici su disegno", "Riproduzioni fedeli", "Progetti dedicati"],
+    text: "Quando il lavoro non rientra in una categoria standard, partiamo direttamente dall'esigenza: un pezzo unico, una parte da integrare, un elemento da riprodurre o una soluzione da sviluppare insieme.",
+    bullets: [
+      "Pezzi unici",
+      "Lavori da disegno o modello",
+      "Integrazione e recupero di parti esistenti",
+    ],
   },
-  {
-    id: "restauro",
-    title: "Restauro e recupero",
-    img: `${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`,
-    text: "C.F. Ferrobattuto può valutare anche interventi di recupero su opere esistenti in ferro battuto, come cancelli, ringhiere, inferriate o elementi decorativi da ripristinare, integrare o completare.",
-    bullets: ["Valutazione dello stato", "Integrazione di parti mancanti", "Recupero decorativo"],
-    cta: { label: "Invia alcune foto per una valutazione", to: "/contatti" as const },
-  },
-];
-
-const finiture = [
-  "Ferro battuto",
-  "Finiture brunite",
-  "Verniciature",
-  "Trattamenti per esterno",
-  "Recupero e integrazione di parti esistenti",
-  "Componenti realizzati su richiesta",
 ];
 
 function ServiziPage() {
   return (
     <div>
-      {/* HERO */}
-      <section className="border-b border-border bg-secondary py-24 md:py-32">
+      <section className="border-b border-border bg-secondary py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-10">
-          <p className="eyebrow">Servizi</p>
+          <p className="eyebrow">Lavorazioni</p>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-tight md:text-6xl">
-            Lavorazioni artigianali in ferro battuto
+            Ferro battuto realizzato per il progetto
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Realizziamo opere su misura, componenti forgiati e dettagli architettonici per abitazioni, edifici storici, professionisti e clienti che cercano qualità artigianale.
+            Lavoriamo per privati, professionisti e imprese quando servono misure, forme o
+            componenti che richiedono una realizzazione dedicata.
           </p>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="py-20 md:py-24">
-        <div className="container mx-auto max-w-3xl px-6 text-center md:px-10">
-          <p className="font-serif text-2xl leading-relaxed text-foreground/80 md:text-3xl">
-            Ogni lavoro viene valutato singolarmente in base alla richiesta, al contesto, allo stile desiderato e alle caratteristiche tecniche necessarie. C.F. Ferrobattuto non lavora in serie: ogni opera viene pensata e realizzata su misura.
-          </p>
-        </div>
-      </section>
-
-      {/* SERVIZI DETTAGLIATI */}
-      <section className="pb-20 md:pb-32">
-        <div className="container mx-auto space-y-24 px-6 md:px-10 md:space-y-32">
+      <section className="py-20 md:py-28">
+        <div className="container mx-auto space-y-20 px-6 md:px-10 md:space-y-28">
           {services.map((s, i) => (
-            <div key={s.id} id={s.id} className={`grid gap-12 md:grid-cols-2 md:items-center md:gap-16 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
+            <div
+              key={s.id}
+              id={s.id}
+              className={`scroll-mt-28 grid gap-10 md:grid-cols-2 md:items-center md:gap-16 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}
+            >
               <MImage src={s.img} alt={s.title} ratio="4/5" />
               <div>
-                <p className="eyebrow">Servizio 0{i + 1}</p>
+                <p className="eyebrow">0{i + 1}</p>
                 <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">{s.title}</h2>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{s.text}</p>
-                <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <ul className="mt-7 space-y-3">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <span className="mt-2 h-px w-4 bg-rame" />
+                      <span className="mt-2 h-px w-5 bg-rame" />
                       {b}
                     </li>
                   ))}
                 </ul>
-                {s.cta && (
-                  <Link to={s.cta.to} className="mt-8 inline-flex items-center gap-2 bg-rame px-6 py-3 text-[12px] uppercase tracking-[0.2em] text-avorio hover:bg-ruggine">
-                    {s.cta.label} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                )}
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* MATERIALI */}
-      <section className="section-dark py-24 md:py-32">
-        <div className="container mx-auto grid gap-14 px-6 md:grid-cols-2 md:items-center md:px-10">
-          <div>
-            <p className="eyebrow">Materiali</p>
+      <section className="section-dark py-20 md:py-28">
+        <div className="container mx-auto grid gap-10 px-6 md:grid-cols-[1fr_auto] md:items-center md:px-10">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Richieste particolari</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-avorio md:text-5xl">
-              Materiali e finiture
+              Non trovi la tua lavorazione nell'elenco?
             </h2>
-            <p className="mt-6 text-avorio/70">
-              La scelta delle finiture viene valutata in base al contesto, all'uso dell'opera e all'effetto estetico desiderato.
+            <p className="mt-5 text-lg text-avorio/70">
+              Inviaci una foto, un disegno o una breve descrizione: molte lavorazioni nascono
+              proprio da richieste fuori standard.
             </p>
           </div>
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-            {finiture.map((f) => (
-              <li key={f} className="flex items-center gap-3 border-t border-white/10 pt-4 font-serif text-lg text-avorio">
-                <span className="h-px w-6 bg-rame" />
-                {f}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto max-w-3xl px-6 text-center md:px-10">
-          <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-            Non hai trovato esattamente quello che cerchi?
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Ogni lavoro viene valutato singolarmente. Puoi inviarci una foto, un disegno o una descrizione della tua idea.
-          </p>
-          <Link to="/contatti" className="mt-10 inline-flex items-center gap-2 bg-rame px-8 py-4 text-[13px] uppercase tracking-[0.2em] text-avorio hover:bg-ruggine">
-            Raccontaci il tuo progetto <ArrowRight className="h-4 w-4" />
+          <Link
+            to="/contatti"
+            className="inline-flex items-center gap-2 bg-rame px-8 py-4 text-[13px] uppercase tracking-[0.2em] text-avorio hover:bg-ruggine"
+          >
+            Raccontaci il progetto <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

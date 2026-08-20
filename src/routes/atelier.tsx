@@ -2,87 +2,112 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { MImage } from "@/components/MImage";
 
+const BASE_URL = "https://cfferrobattuto.it";
 const IMG_CHI = "/images/chi-siamo";
 const IMG_PROCESSO = "/images/processo";
+const IMG_HERO = "/images/hero";
 
 export const Route = createFileRoute("/atelier")({
   head: () => ({
     meta: [
-      { title: "Atelier — Il laboratorio C.F. Ferrobattuto" },
-      { name: "description", content: "Il laboratorio di C.F. Ferrobattuto: forgia, incudine e banco. Un modo di lavorare fatto di ascolto, progetto, lavorazione a mano e finitura." },
-      { property: "og:title", content: "Atelier — C.F. Ferrobattuto" },
-      { property: "og:description", content: "Un laboratorio dove il ferro prende forma a mano, un'opera alla volta." },
-      { property: "og:url", content: "/atelier" },
+      { title: "Laboratorio artigiano di ferro battuto | C.F. Ferrobattuto" },
+      {
+        name: "description",
+        content:
+          "Dentro il laboratorio C.F. Ferrobattuto: forgia, incudine, maglio e lavorazione manuale del ferro, con oltre 20 anni di esperienza.",
+      },
+      {
+        property: "og:title",
+        content: "Laboratorio artigiano di ferro battuto | C.F. Ferrobattuto",
+      },
+      {
+        property: "og:description",
+        content:
+          "Il luogo in cui il ferro viene progettato, forgiato, assemblato e rifinito a mano.",
+      },
+      { property: "og:url", content: `${BASE_URL}/atelier` },
     ],
-    links: [{ rel: "canonical", href: "/atelier" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/atelier` }],
   }),
   component: AtelierPage,
 });
 
 const metodo = [
-  { n: "01", t: "Ascolto", d: "Capire richiesta, contesto e necessità." },
-  { n: "02", t: "Progetto", d: "Definire forma, proporzioni e dettagli." },
-  { n: "03", t: "Lavorazione", d: "Realizzare a mano ogni elemento." },
-  { n: "04", t: "Finitura", d: "Curare protezione, resa estetica e durata." },
-];
-
-const gallery = [
-  `${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`,
-  `${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`,
-  `${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`,
-  `${IMG_CHI}/CFFerrobattuto-incudine-1.webp`,
-  `${IMG_CHI}/CFFerrobattuto-banco-1.webp`,
+  {
+    n: "01",
+    t: "Misure e contesto",
+    d: "Si parte da ciò che deve essere realizzato e dal luogo in cui andrà inserito.",
+  },
+  {
+    n: "02",
+    t: "Forma e proporzioni",
+    d: "Si definiscono ingombri, ritmo e dettagli prima di lavorare il materiale.",
+  },
+  {
+    n: "03",
+    t: "Lavorazione",
+    d: "Forgiatura, battitura e assemblaggio vengono eseguiti in laboratorio.",
+  },
+  {
+    n: "04",
+    t: "Finitura",
+    d: "Protezione e resa finale vengono scelte in funzione dell'opera e del suo utilizzo.",
+  },
 ];
 
 function AtelierPage() {
   return (
     <div>
-      {/* HERO */}
       <section className="relative isolate overflow-hidden bg-carbone text-avorio">
         <MImage
           src={`${IMG_CHI}/CFFerrobattuto-Franco-1.webp`}
-          alt="Franco al lavoro nell'atelier C.F. Ferrobattuto"
+          alt="Franco nel laboratorio C.F. Ferrobattuto"
           ratio="16/9"
+          priority
           className="!absolute inset-0 h-full w-full !aspect-auto opacity-70"
+          style={{ objectPosition: "center 32%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-carbone via-carbone/60 to-carbone/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-carbone via-carbone/65 to-carbone/25" />
         <div className="relative z-10 container mx-auto px-6 py-28 md:px-10 md:py-40">
-          <p className="eyebrow text-rame">L'atelier</p>
+          <p className="eyebrow text-rame">Il laboratorio</p>
           <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[1.05] md:text-6xl">
-            Un laboratorio dove il ferro <span className="italic text-rame">prende forma a mano</span>
+            Ferro, strumenti e lavoro manuale
           </h1>
           <p className="mt-6 max-w-xl text-lg text-avorio/80">
-            C.F. Ferrobattuto nasce dalla conoscenza del materiale, dalla lavorazione manuale e dalla volontà di mantenere vivo un mestiere sempre più raro.
+            Qui ogni pezzo passa dalle mani di chi lo progetta e lo lavora, una fase alla volta.
           </p>
         </div>
       </section>
 
-      {/* IDENTITÀ */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto grid gap-14 px-6 md:grid-cols-2 md:items-center md:gap-20 md:px-10">
+      <section className="py-20 md:py-28">
+        <div className="container mx-auto grid gap-12 px-6 md:grid-cols-2 md:items-center md:gap-20 md:px-10">
           <div>
-            <p className="eyebrow">Identità</p>
+            <p className="eyebrow">Franco e C.F. Ferrobattuto</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
-              Artigianalità, esperienza e attenzione al dettaglio
+              Oltre vent'anni di lavoro sul ferro
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Ogni opera viene pensata e lavorata con cura, seguendo le esigenze del cliente e rispettando il carattere del ferro battuto. Non si tratta di produzione in serie, ma di lavorazioni realizzate una alla volta, con attenzione alla funzione, alla forma e alla durata.
+              Franco lavora il ferro partendo dalla funzione e dalle proporzioni dell'opera. Nel
+              laboratorio convivono strumenti tradizionali e attrezzature da officina: forgia,
+              incudine, maglio e banco servono a trasformare un disegno o una richiesta concreta in
+              un pezzo finito.
             </p>
           </div>
-          <MImage src={`${IMG_CHI}/CFFerrobattuto-banco-1.webp`} alt="Il banco di lavoro dell'atelier" ratio="4/5" />
+          <MImage
+            src={`${IMG_CHI}/CFFerrobattuto-banco-1.webp`}
+            alt="Banco e strumenti del laboratorio C.F. Ferrobattuto"
+            ratio="4/5"
+          />
         </div>
       </section>
 
-      {/* METODO */}
-      <section className="section-dark py-24 md:py-32">
+      <section className="section-dark py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-10">
-          <div className="max-w-2xl">
-            <p className="eyebrow">Metodo</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-avorio md:text-5xl">
-              Il nostro modo di lavorare
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-4">
+          <p className="eyebrow">Metodo</p>
+          <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-avorio md:text-5xl">
+            Quattro passaggi, senza sovrastrutture
+          </h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-4">
             {metodo.map((m) => (
               <div key={m.n} className="border-t border-white/15 pt-6">
                 <span className="font-serif text-3xl text-rame">{m.n}</span>
@@ -91,59 +116,64 @@ function AtelierPage() {
               </div>
             ))}
           </div>
-          <div className="mt-16 grid gap-5 sm:grid-cols-3">
-            <MImage src={`${IMG_CHI}/CFFerrobattuto-incudine-1.webp`} alt="Incudine del laboratorio" ratio="4/5" />
-            <MImage src={`${IMG_CHI}/CFFerrobattuto-banco-1.webp`} alt="Banco di lavoro" ratio="4/5" />
-            <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-lavoro-incudine-11.webp`} alt="Battitura sull'incudine" ratio="4/5" />
+          <div className="mt-14 grid gap-5 sm:grid-cols-3">
+            <MImage
+              src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`}
+              alt="Forgia accesa durante la lavorazione"
+              ratio="4/5"
+            />
+            <MImage
+              src={`${IMG_CHI}/CFFerrobattuto-incudine-1.webp`}
+              alt="Incudine e martello nel laboratorio"
+              ratio="4/5"
+            />
+            <MImage
+              src={`${IMG_HERO}/CFFerrobattuto-lavoro-maglio-2.webp`}
+              alt="Lavorazione del ferro al maglio"
+              ratio="4/5"
+            />
           </div>
         </div>
       </section>
 
-      {/* MATERIA */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-6 md:px-10">
-          <div className="grid gap-14 md:grid-cols-2 md:items-center md:gap-20">
-            <div>
-              <p className="eyebrow">Materia</p>
-              <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
-                Il ferro come <span className="italic text-rame">materia viva</span>
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Il ferro battuto conserva tracce del gesto, della lavorazione e della finitura. Ogni dettaglio racconta il modo in cui è stato realizzato.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-11.webp`} alt="Forgia accesa" ratio="1/1" />
-              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componenti in ferro" ratio="1/1" />
-              <MImage src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`} alt="Componente forgiato" ratio="1/1" className="col-span-2" />
-            </div>
+      <section className="py-20 md:py-28">
+        <div className="container mx-auto grid gap-12 px-6 md:grid-cols-2 md:items-center md:gap-20 md:px-10">
+          <div className="grid grid-cols-2 gap-4">
+            <MImage
+              src={`${IMG_PROCESSO}/CFFerrobattuto-forgia-31.webp`}
+              alt="Ferro caldo nella forgia"
+              ratio="1/1"
+            />
+            <MImage
+              src={`${IMG_PROCESSO}/CFFerrobattuto-componente-forgiato-1.webp`}
+              alt="Componente in ferro durante la lavorazione"
+              ratio="1/1"
+            />
+          </div>
+          <div>
+            <p className="eyebrow">La materia</p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+              I segni della lavorazione restano nel pezzo
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Battitura, piega, assemblaggio e finitura lasciano tracce leggibili. È questa
+              lavorazione, più delle parole, a distinguere un elemento realizzato in laboratorio da
+              un prodotto seriale.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section className="border-t border-border pb-24 pt-16 md:pt-24">
-        <div className="container mx-auto px-6 md:px-10">
-          <p className="eyebrow">Dentro il laboratorio</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight md:text-5xl">
-            Forgia, incudine, banco
-          </h2>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-5">
-            {gallery.map((src, i) => (
-              <MImage key={src} src={src} alt={`Dettaglio laboratorio ${i + 1}`} ratio="3/4" />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-dark py-24 md:py-32">
+      <section className="section-dark py-20 md:py-28">
         <div className="container mx-auto max-w-3xl px-6 text-center md:px-10">
           <h2 className="font-serif text-4xl leading-tight text-avorio md:text-5xl">
-            Vuoi realizzare un'opera su misura?
+            Hai un'idea da trasformare in ferro?
           </h2>
-          <Link to="/contatti" className="mt-10 inline-flex items-center gap-2 bg-rame px-8 py-4 text-[13px] uppercase tracking-[0.2em] text-avorio hover:bg-ruggine">
-            Parlaci della tua idea <ArrowRight className="h-4 w-4" />
+          <Link
+            to="/contatti"
+            className="mt-9 inline-flex items-center gap-2 bg-rame px-8 py-4 text-[13px] uppercase tracking-[0.2em] text-avorio hover:bg-ruggine"
+          >
+            Parliamone <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
