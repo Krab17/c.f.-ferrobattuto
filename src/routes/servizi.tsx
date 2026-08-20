@@ -22,7 +22,7 @@ export const Route = createFileRoute("/servizi")({
       {
         property: "og:description",
         content:
-          "Opere architettoniche, componenti forgiati e lavorazioni speciali realizzate su richiesta.",
+          "Opere, componenti forgiati e lavorazioni speciali realizzate su richiesta.",
       },
       { property: "og:url", content: `${BASE_URL}/servizi` },
     ],
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/servizi")({
 const services = [
   {
     id: "opere-architettoniche",
-    title: "Opere architettoniche in ferro battuto",
+    title: "Opere in ferro battuto",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
     text: "Cancelli, ringhiere, parapetti, inferriate e recinzioni vengono dimensionati sulle misure reali e sul carattere dell'edificio. Forma e decorazione vengono definite in funzione del luogo, evitando soluzioni standard quando il progetto richiede proporzioni specifiche.",
     bullets: ["Cancelli e ingressi", "Ringhiere e parapetti", "Inferriate e recinzioni"],
