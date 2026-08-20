@@ -42,7 +42,7 @@ export function Footer() {
           </FooterCol>
 
           <FooterCol title="Lavorazioni">
-            <A href="/servizi#opere-architettoniche">Opere architettoniche</A>
+            <A href="/servizi#opere-architettoniche">Opere</A>
             <A href="/servizi#componenti-forgiati">Componenti forgiati</A>
             <A href="/servizi#elementi-decorativi">Elementi decorativi</A>
             <A href="/servizi#lavorazioni-speciali">Lavorazioni speciali</A>
