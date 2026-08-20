@@ -76,11 +76,10 @@ function LavoriPage() {
         <div className="relative z-10 container mx-auto px-6 py-28 md:px-10 md:py-40">
           <p className="eyebrow text-rame">Lavori</p>
           <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-tight md:text-6xl">
-            Il lavoro finito, senza catalogo
+            I nostri lavori finiti
           </h1>
           <p className="mt-6 max-w-xl text-lg text-avorio/80">
-            Una selezione di opere realmente realizzate. Pochi esempi, scelti per mostrare contesti,
-            proporzioni e dettagli diversi.
+            Una selezione di opere realizzate. Esempi scelti per mostrare come lavoriamo.
           </p>
         </div>
       </section>
