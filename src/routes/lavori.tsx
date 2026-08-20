@@ -29,13 +29,13 @@ export const Route = createFileRoute("/lavori")({
 
 const works = [
   {
-    title: "Scala in marmo con ringhiera decorativa",
+    title: "Ringhiera per scala in marmo.",
     cat: "Scale e ringhiere",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-scala-marmo-1.webp`,
     desc: "Ringhiera in ferro battuto inserita in una scala interna in marmo.",
   },
   {
-    title: "Ringhiera esterna",
+    title: "Ringhiera semplice esterna",
     cat: "Ringhiere",
     img: `${IMG_PORTFOLIO}/CFFerrobattuto-ringhiera-1.webp`,
     desc: "Lavorazione decorativa per esterno, realizzata sulle proporzioni del contesto.",
